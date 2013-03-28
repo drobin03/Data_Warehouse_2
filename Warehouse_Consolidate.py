@@ -30,10 +30,11 @@ def main():
             datetime = row[0]
             upload = row[1]
             download = row[2]
+            download = download + row[2]
             #sex = row[3]
             #income = row[4]
       # Now print fetched result
-            print "datetime=%s,upload=%d,download=%d" % \
+            print "datetime=%s,upload=%s,download=%s" % \
              (datetime, upload, download )
     except:
         print "Error: unable to fetch data"
