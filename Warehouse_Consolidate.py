@@ -20,22 +20,23 @@ def main():
     print "Database version : %s " % data
 
     # disconnect from server
-    db.close()
-    #sq1 = "SELECT * FROM cis3760"
     
-    #try:
-#        cursor.execute(sq1)
-#        results = cursor.fetchall()
-#        for row in results:
-#            fname = row[0]
-#            lname = row[1]
- #           #age = row[2]
+    sq1 = "SELECT * FROM Internet_Throughput "
+    
+    try:
+        cursor.execute(sq1)
+        results = cursor.fetchall()
+        for row in results:
+            datetime = row[0]
+            upload = row[1]
+            download = row[2]
             #sex = row[3]
             #income = row[4]
       # Now print fetched result
- #       print "fname=%s,lname=%s,age=%d,sex=%s,income=%d" % \
- #            (fname, lname )
- #   except:
- #       print "Error: unable to fetch data"
+            print "datetime=%s,upload=%d,download=%d" % \
+             (datetime, upload, download )
+    except:
+        print "Error: unable to fetch data"
+    db.close()
 if __name__ == "__main__":
     main()
