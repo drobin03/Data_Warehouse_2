@@ -30,6 +30,7 @@ to run
 python Warehouse_Consolidate.py
 
 git stuff
+==========
 git clone "url"
 what i do to push my stuff
 git pull
