@@ -6,12 +6,12 @@
 import datetime
 import MySQLdb
 import time
-
-class Consolidator():
-    startDate = datetime.datetime(2013,03,28,10,05,00)
-    endDate = datetime.datetime(2013,03,28,10,05,00)
+import string
+class Consolidator:
 
     def main():
+        startDate = "'2013-03-27 00:00:00'"
+        endDate = "'2013-03-28 23:59:59'"
         summary = 0.0
         table = "Internet_Throughput"
         db = MySQLdb.connect("www.farm-to-fork.ca","manager","waterfall","cis3760") #IP, USERNAME, PASS, DB NAME
@@ -27,7 +27,11 @@ class Consolidator():
 
         # disconnect from server
         
-        sq1 = "SELECT * FROM `Internet_Throughput` WHERE `datetime` BETWEEN '2009-03-28 00:00:00' AND '2013-03-28 23:59:59'"
+        sq1 = "SELECT * FROM `Internet_Throughput` WHERE `datetime` BETWEEN "
+        sq1 += startDate
+        sq1 +=" AND "
+        sq1 += endDate
+        print sq1
         try:
             cursor.execute(sq1)
             results = cursor.fetchall()
