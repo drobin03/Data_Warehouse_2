@@ -23,7 +23,8 @@ class Data:
 	def parse(self):
 		# for field in xml:
 		#     Create new DBdata for (field, value) pair.
-		doc = etree.parse(self.xml)
+		#doc = etree.parse(self.xml)
+
 
 
 		self.values.append(DBdata("datetime", "'2013-03-28 23:59:59'"))
