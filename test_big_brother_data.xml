@@ -1,0 +1,12 @@
+<xml>
+	<record>
+		<datetime>2013-02-23 23:52:59</datetime>
+		<upload>3.5</upload>
+		<download>3.4</download>
+	</record>
+	<record>
+		<datetime>2013-01-23 23:52:59</datetime>
+		<upload>2.4</upload>
+		<download>2.5</download>
+	</record>
+</xml>
