@@ -47,7 +47,6 @@ class Data:
 	def parse(self):
 		parser = etree.XMLParser(remove_blank_text=True)
 		try:
-			print self.xml
 			doc = etree.fromstring(self.xml, parser)
 		except:
 			print "Error reading XML file"
@@ -64,8 +63,6 @@ class Data:
 			# Only accept the data if the tag matches the field in the database.
 			if (element.tag in self.fields):
 				self.rows[current_row - 1].append(DBdata(element.tag, element.text))
-			else :
-				print "%s is not a valid field in the database" % (element.tag)
 		
 	def store(self, cursor):
 		# initialize an insert command for each row
@@ -99,7 +96,6 @@ class Data:
 				results = cursor.fetchall()
 			except (MySQLdb.OperationalError, MySQLdb.IntegrityError) as error:
 				print error
-		print "still running"
 
 
 class DBdata:
@@ -200,6 +196,13 @@ if __name__ == "__main__":
 	test_xml = test_xml_file.read()
 
 	schema_file = open("./big_brother.xsd", "r")
-	observer.add_data_source("Big Brother", schema_file.read())
 
-	#observer.store_data("Internet_Throughput", test_xml)
+	#
+	# Test adding a new data source
+	#
+	#observer.add_data_source("Big Brother", schema_file.read())
+
+	#
+	# Test the storage function
+	#
+	observer.store_data("Internet_Throughput", test_xml)
