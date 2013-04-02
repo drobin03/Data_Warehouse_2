@@ -1,4 +1,4 @@
-Start Date Time
+Start Date Time (yyyy-mm-dddd hh:mm:ss)
 0000-00-00 00:00:00
-Ending Date Time
+Ending Date Time (yyyy-mm-dddd hh:mm:ss)
 9999-12-28 23:59:59
