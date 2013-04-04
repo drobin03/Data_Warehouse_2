@@ -4,7 +4,11 @@
 # This Module Performs the functions necessary for storing data in the database.
 # It parses an XML file, verifies it against a schema, and stores the data.
 # 
-# Currently, no validation is done of the xml against a schema.
+# See test_store.py for an example of how to use the storage functionality
+# of this program.
+#
+# See test_new_source.py for an example of how to add a new data source to the 
+# warehouse.
 
 import MySQLdb
 from lxml import etree
